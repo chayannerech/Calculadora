@@ -28,7 +28,7 @@ namespace Calculadora.ConsoleApp
                     string segundoNumeroString = Console.ReadLine();
                     decimal segundoNumero = Convert.ToDecimal(segundoNumeroString);
 
-                    if (operacao == "4" && segundoNumero == 0) Console.WriteLine("\nNão é possível dividir um número por zero. Por favor, tente novamente");
+                    if (operacao == "4" && segundoNumero == 0) Console.WriteLine("\nNão é possível dividir um número por zero :( Por favor, tente novamente");
                     else
                     {
                         if (operacao == "1") resultado = primeiroNumero + segundoNumero;
