@@ -3,15 +3,15 @@
 
  ### Funcionalidades
  - **Operações básicas:** Realize somas, subtrações, divisões e multiplicações com facilidade;
- - **Suporte a decimais:** Trabalhe com números que têm até duas casas decimais;
- - **Validação de entrada:** A calculadora garante que apenas operações;
- - **Tratamento de divisão por zero:** A calculadora é capaz de;
+ - **Suporte a decimais:** Trabalhe com números não inteiros;
+ - **Validação de entrada:** A calculadora garante que apenas operações válidas sejam selecionadas no menu inicial;
+ - **Tratamento de divisão por zero:** A calculadora é capaz de evitar uma tentativa de divisão por zero;
 
 ---
 ### Como usar
 1. Clone o repositório ou baixe o código fonte da calculadora;
-2. Abra o terminal ou o Prompt de Comando e navegue até;
-3. Utilize o comando abaixo para restaurar as dependências do projeto;
+2. Abra o terminal ou o Prompt de Comando e navegue até a pasta correspondente;
+3. Utilize o comando abaixo para restaurar as dependências do projeto:
 ```
 dotnet restore
 ```
