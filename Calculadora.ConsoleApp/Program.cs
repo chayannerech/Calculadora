@@ -24,30 +24,33 @@ namespace Calculadora.ConsoleApp
         {
             Console.Clear();
             Console.WriteLine("Calculadora TopShow\n");
-            Console.WriteLine("Digite: \n 1 - para somar \n 2 - para subtrair \n 3 - para multiplicar \n 4 - para dividir \n S - para sair");
+            Console.WriteLine("Digite: \n 1 - para somar \n 2 - para subtrair \n 3 - para multiplicar \n 4 - para dividir \n 5 - para mostrar a tabuada\n X - para sair\n");
             string operacao = Console.ReadLine();
 
             return operacao;
         }
         static bool SaidaSelecionada(string opcao)
         {
-            bool saidaSelecionada = opcao == "S" || opcao == "s";
+            bool saidaSelecionada = opcao == "X" || opcao == "x";
             return saidaSelecionada;
         }
         static bool OpcaoInvalida(string opcao)
         {
-            bool opcaoInvalida = opcao != "1" && opcao != "2" && opcao != "3" && opcao != "4";
+            bool opcaoInvalida = opcao != "1" && opcao != "2" && opcao != "3" && opcao != "4" && opcao != "5";
             return opcaoInvalida;
         }
         static void RealizarCalculo(string operacao)
         {
-            decimal resultado = 0;
+            decimal resultado = 0, primeiroNumero = 1, segundoNumero = 1;
 
-            Console.WriteLine("Digite o primeiro número");
-            decimal primeiroNumero = Convert.ToDecimal(Console.ReadLine());
+            if(operacao != "5")
+            {
+                Console.WriteLine("\nDigite o primeiro número");
+                primeiroNumero = Convert.ToDecimal(Console.ReadLine());
 
-            Console.WriteLine("Agora, o segundo número");
-            decimal segundoNumero = Convert.ToDecimal(Console.ReadLine());
+                Console.WriteLine("Agora, o segundo número");
+                segundoNumero = Convert.ToDecimal(Console.ReadLine());
+            }
 
             if (operacao == "4" && segundoNumero == 0) Console.WriteLine("\nNão é possível dividir um número por zero :( Por favor, tente novamente");
             else
@@ -66,9 +69,18 @@ namespace Calculadora.ConsoleApp
                     case "4":
                         resultado = primeiroNumero / segundoNumero;
                         break;
-                }
+                    case "5":
+                        Console.WriteLine("\nInforme o número:");
+                        primeiroNumero = Convert.ToDecimal(Console.ReadLine());
+                        Console.WriteLine();
 
-                Console.WriteLine("\nShow! Seu resultado é: " + resultado);
+                        for (int i = 1; i <= 10; i++)
+                        {
+                            Console.WriteLine(i + " x " + primeiroNumero + " = " + (primeiroNumero * i));
+                        }
+                        break;
+                }
+                if (operacao != "5") Console.WriteLine("\nShow! Seu resultado é: " + resultado);
             }
         }
     }
